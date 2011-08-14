@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+/* Block ------------------------------- */
+p{
+	text-indent: 0;
+	font-size: 1.2em;
+	line-height: 1.4em;
+	margin: 1.25em 0;
+	text-align: justify;
+}
+blockquote {
+	font-size: 1.2em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	margin: 1.5em 0 1.5em 0;
+	padding: 1em 1.5em;
+	text-indent: 0;
+	font-style: italic;
+	border-top: solid 1px #dedede;
+	border-bottom: solid 1px #dedede;
+	color: #9a9a9a;
+}
+blockquote[title]:before{
+	display: block;
+	content: attr(title) ":";
+	text-align: left;
+	font-style: normal;
+	text-transform: uppercase;
+}
+blockquote[cite]:after{
+	display: block;
+	content: "URI: " attr(cite);
+	text-align: right;
+	font-style: normal;
+}
+
+/* List ------------------------------------------------------------ */
+ul, ol{
+	font-size: 1.0em;
+	margin: 0.5em 0 0 2.0em;
+	padding: 0;
+}
+li{
+	margin: 0 0 0 0;
+}
+li p{
+	margin: 0;
+	text-indent: 0;
+}
+ul * ul, ol * ol,
+ul * ol, ol * ul,
+ul * dl, ol * dl,
+ul * p, ol * p{
+	
+}
+
+dl{
+	font-size: 1.2em;
+}
+dl dt{
+	margin: 1.0em 0 0.3em 0;
+	font-weight: bold;
+}
+dl dd{
+	margin: 0 0.5em;
+}
+dl * dl, dl * ul, dl * ol, dl * p{
+	font-size: 1.0em;
+}
+
+/* Table ------------------------------------------------------------ */
+table{
+	margin: 1.0em 0;
+	font-size: 1.2em;
+}
+table thead tr th{
+	padding: 0.5em 0.5em;
+	white-space: nowrap;
+	text-align: center;
+	font-weight: bold;
+}
+table tbody tr th{
+	padding: 0.5em 0.2em;
+	white-space: nowrap;
+	text-align: center;
+}
+table tbody tr td{
+	padding: 0.5em 0.2em;
+	text-align: center;
+}
+
+/* Pre ---------------------------------------------------- */
+pre{
+	font-family: "Courier New",Courier,monospace;
+	font-size: 1.2em;
+	background-color: #fefefe;
+	border: solid 1px #dedede;
+	line-height: 120%;
+	margin: 1em 0;
+	padding: 0.5em;
+	overflow-x: auto;
+	overflow-y: auto;
+}

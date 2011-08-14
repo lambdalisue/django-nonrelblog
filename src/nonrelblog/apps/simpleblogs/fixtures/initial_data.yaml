@@ -1,0 +1,36 @@
+- fields: {body: "Introduction\r\n========================\r\n`Google App Engine <http://code.google.com/intl/ja/appengine/>`_\
+      \ doesn't support SQL but GQL.\r\nThat's why when you want to create `Django\
+      \ <https://www.djangoproject.com/>`_ app on Google App Engine, you have to rewrite\
+      \ models\r\nfor Google App Engine. Even if it is really simple application.\r\
+      \n\r\n`Django-nonrel <http://www.allbuttonspressed.com/projects/django-nonrel>`_\
+      \ is a branch version of\r\nDjango which support NoSQL database system. Using\
+      \ this branch, you can create an model used\r\nNoSQL database system with nearly\
+      \ same format of SQL database system.\r\n\r\nIn this article, I'll show you\
+      \ how to use Django-nonrel on Google App Engine.\r\n\r\n\r\nDemo\r\n========\r\
+      \n`Nonrelblog <http://nonrelblog.appspot.com/>`_ is a demo application of using\
+      \ Django-nonrel on Google App Engine.\r\nIt is a simple blogging system. Permission\
+      \ feature of the demo application is currently commented out.\r\n\r\n\r\nRequired\
+      \ packages\r\n==================================\r\nThe packages below is required\
+      \ to run Demo application.\r\n\r\n-   `Django-nonrel <http://www.allbuttonspressed.com/projects/django-nonrel>`_\r\
+      \n-   `djangoappengine <http://www.allbuttonspressed.com/projects/djangoappengine>`_\r\
+      \n\r\n    .. WARNING::\r\n        Nonrelblog doesn't use official version of\
+      \ djangoappengine. The official version\r\n        of djangoappengine doesn't\
+      \ allow to put python source files on ``ROOT/src/<project_name>``\r\n      \
+      \  directory which I often use. Forked version of it is on https://bitbucket.org/lambdalisue/djangoappengine\r\
+      \n\r\n-   `django-dbindexer <http://www.allonspressed.com/projects/django-dbindexer>`_\r\
+      \n-   `django-autoload <http://www.allbuttonspressed.com/projects/django-autoload>`_\r\
+      \n-   `djangotoolbox <http://www.allbuttonspressed.com/projects/djangotoolbox>`_\r\
+      \n-   `django-qwert <http://github.com/lambdalisue/django-qwert/>`_\r\n\r\n\r\
+      \nHow to install Demo app\r\n==============================================\r\
+      \nFirst you have to install Google App Engine SDK for Python on your computer.\r\
+      \nFollow the instruction of `official Google App Engine <http://code.google.com/intl/ja/appengine/downloads.html>`_\
+      \ page.\r\n\r\nSecond open Terminal and execute commands below on your working\
+      \ directory.\r\n\r\nCommands::\r\n\r\n    git clone git://github.com/lambdalisue/django-nonrelblog.git\r\
+      \n    cd django-nonrelblog\r\n    ./utils/leadoff.sh install\r\n    ./src/nonrelblog/manage.py\
+      \ syncdb\r\n    ./src/nonrelblog/manage.py runserver\r\n\r\nFinally, you can\
+      \ see simpleblog application on http://localhost:8080/\r\n\r\n", created_at: !!timestamp '2011-08-14
+      12:14:31.940927', enable_comments: true, is_draft: false, publish_at: 2011-08-14,
+    title: Working Django on Google App Engine aka Django-nonrel, updated_at: !!timestamp '2011-08-14
+      10:41:02.839919'}
+  model: simpleblogs.article
+  pk: 1

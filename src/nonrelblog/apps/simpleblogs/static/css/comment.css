@@ -1,0 +1,58 @@
+@charset "utf-8";
+
+section#comment{
+	margin-left: 120px;
+}
+section#comment dl{
+	margin: 20px 0;
+}
+section#comment dl dt{
+	font-weight: normal;
+	font-size: 0.8em;
+	margin-top: 20px;
+	border-bottom: 1px dotted #dedede;
+	color: #ababab;
+}
+section#comment dl dd p{
+	font-size: 1.2em;
+}
+section#comment form{
+	margin-top: 40px;
+} 
+section#comment form p{
+	position: relative;
+	margin: 5px 0;
+}
+section#comment form label[for=id_name]{
+	background: url(image/user.png) no-repeat;
+	margin-left: 0;
+}
+section#comment form label[for=id_email]{
+	background: url(image/message.png) no-repeat;
+}
+section#comment form label[for=id_url]{
+	background: url(image/home.png) no-repeat;
+	margin-left: 0;
+}
+section#comment form label[for=id_name],
+section#comment form label[for=id_email],
+section#comment form label[for=id_url]{
+	position: absolute;
+	top: 2px; left: 3px;
+	display: block;
+	width: 16px;
+	height: 16px;
+	text-indent: -10000px;
+}
+section#comment form label[for=id_comment]{
+	display: none;
+}
+section#comment form input#id_name{
+	padding-left: 20px;
+	width: 200px;
+}
+section#comment form input#id_email,
+section#comment form input#id_url{
+	padding-left: 20px;
+	width: 600px;
+}

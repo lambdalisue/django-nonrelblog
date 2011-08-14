@@ -1,0 +1,38 @@
+{% extends "simpleblogs/base.html" %}
+{% load i18n %}
+{% load markup %}
+
+{% block content %}
+<nav id="management">
+	<ul>
+	<li class="create"><a href="{% url simpleblogs_article_create %}" title="{% trans 'Create new article' %}">{% trans 'Create' %}</a></li>
+	{% if object %}
+	<li class="update"><a href="{% url simpleblogs_article_update object.pk %}" title="{% trans 'Update this article' %}">{% trans 'Update' %}</a></li>
+	<li class="delete"><a href="{% url simpleblogs_article_delete object.pk %}" title="{% trans 'Delete this article' %}">{% trans 'Delete' %}</a></li>
+	{% endif %}
+	</ul>
+</nav>
+<section id="articles">
+{% if object_list %}
+	{% for article in object_list %}
+	<article class="article">
+		<aside>
+			<time datetime="{{ article.publish_at }}">
+				<span class="day">{{ article.publish_at.day }}</span>
+				<span class="month">{{ article.publish_at|date:"M" }}</span>
+				<span class="year">{{ article.publish_at.year }}</span>
+			</time>
+		</aside>
+		<section class="content">
+			<h3><a href="{{ article.get_absolute_url }}">{{ article }}</a></h3>
+			<article class="body markup">
+				<p>{{ article.body|restructuredtext|truncatewords_html:"100" }}</p>
+			</article>
+		</section>
+	</article>
+	{% endfor %}
+{% else %}
+	<p>{% trans 'No article is posted yet' %}</p>
+{% endif %}
+</section>
+{% endblock %}

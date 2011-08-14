@@ -1,0 +1,19 @@
+{% extends "simpleblogs/base.html" %}
+{% block content %}
+<h1>
+	{% if object %}
+	Modify article
+	{% else %}
+	Add new article
+	{% endif %}
+</h1>
+<p class="description">
+	{% if object %}
+	Modify '{{ object }}'
+	{% endif %}
+</p>
+<form action="" method="post" class="stylized">{% csrf_token %}
+	{{ form.as_p }}
+	<p><input type="submit" value="Submit" /></p>
+</form>
+{% endblock %}

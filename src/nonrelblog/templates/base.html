@@ -1,0 +1,44 @@
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8">
+		<title>Nonrelblog - {% block title %}Demo for running simpleblogs application on Google App Engine aka Django-nonrel{% endblock %}</title>
+		<!--[if lt IE 9]>
+		<script src="http://ie7-js.googlecode.com/svn/trunk/lib/IE9.js"></script>
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/baseline.compress.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/typography.css">
+		<link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/layout.css">
+		<script type="text/javascript" src="{{ STATIC_URL }}javascript/html5.js"></script>
+		{% block head %}
+		{% endblock %}
+	</head>
+	<body>
+		<div id="container">
+			<header>
+				{% block header %}
+				<figure>
+					<h1><a href="/">Nonrelblog</a></h1>
+					<p class="description">{% trans "Demo for running simpleblogs application on Google App Engine aka Django-nonrel" %}</p>
+				</figure>
+				{% endblock %}
+			</header>
+			{% block introduction %}
+			{% endblock %}
+			
+			<section id="content">
+				{% block content %}
+				{% endblock %}
+			</section>
+			
+			<footer>
+				<p>Thanks for <a href="http://www.webdesignerdepot.com/2010/07/200-exclusive-free-icons-reflection/" target="_blank">Reflection Icon Set</a> by
+					<a href="http://www.webdesignerdepot.com" target="_blank">Webdesigner Depot</a></p>
+				<p>Powered by <a href="http://www.allbuttonspressed.com/projects/django-nonrel" target="_blank">Django-nonrel</a> and
+					<a href="http://code.google.com/intl/ja/appengine/" target="_blank">Google App Engine</a></p>
+				<p>Copyright &copy; 2011-{% now "Y" %} Alisue allright reserved.</p>
+			</footer>
+		</div>
+	</body>
+</html>

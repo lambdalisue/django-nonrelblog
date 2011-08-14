@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block head %}
+<link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/body.css">
+<link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/form.css">
+<link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/comment.css">
+<link type="text/css" rel="stylesheet" media="screen" href="{{ STATIC_URL }}css/simpleblogs.layout.css">
+{% endblock %}
+
+{% block content %}
+<nav id="management">
+	<ul>
+	<li class="create"><a href="{% url simpleblogs_article_create %}" title="{% trans 'Create new article' %}">{% trans 'Create' %}</a></li>
+	<li class="update"><a href="{% url simpleblogs_article_update object.pk %}" title="{% trans 'Update this article' %}">{% trans 'Update' %}</a></li>
+	<li class="delete"><a href="{% url simpleblogs_article_delete object.pk %}" title="{% trans 'Delete this article' %}">{% trans 'Delete' %}</a></li>
+	</ul>
+</nav>
+{% endblock %}

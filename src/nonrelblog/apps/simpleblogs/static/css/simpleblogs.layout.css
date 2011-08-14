@@ -1,0 +1,100 @@
+@charset "utf-8";
+@import "comment.css";
+
+section#content{
+	position: relative;
+}
+section#content nav#management ul{
+	position: absolute;
+	top: -15px; right: 0;
+	margin: 0;
+	padding: 0;
+}
+section#content nav#management ul li{
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+section#content nav#management ul li a{
+	display: block;
+	width: 16px; height: 16px;
+	opacity: 0.5;
+	text-indent: -10000px;
+}
+section#content nav#management ul li a:hover{
+	opacity: 1;
+}
+section#content nav#management ul li.create a{
+	background: url(image/create.png) no-repeat;
+}
+section#content nav#management ul li.update a{
+	background: url(image/update.png) no-repeat;
+}
+section#content nav#management ul li.delete a{
+	background: url(image/delete.png) no-repeat;
+}
+
+
+/* -- article_detail.html --*/
+nav#return a{
+	position: absolute;
+	top: 0;
+	display: block;
+}
+article#article {
+	position: relative;
+}
+article#article article.body p{
+	font-size: 1.4em;
+}
+article#article article.body{
+	padding-bottom: 30px;
+}
+
+section#articles article.article{
+	margin: 20px 0;
+	width: 480px;
+	float: left;
+}
+section#articles:after{
+	display: block;
+	content: "";
+	clear: both;
+}
+aside{
+	float: left;
+	margin: 0 20px 20px 0;
+	font-family: serif;
+}
+aside time{
+	display: block;
+	width: 100px;
+	height: 100px;
+	margin: 0;
+	text-align: center;
+	padding-top: -20px;
+}
+aside time span.day{
+	display: block;
+	font-size: 80px;
+	line-height: 80px;
+}
+aside time span.month,
+aside time span.year{
+	font-size: 20px;
+	line-height: 20px;
+}
+aside time span.month:after{
+	content: ", ";
+	font-size: 20px;
+}
+section.content{
+	margin: 0 0 0 120px;
+	padding: 0 20px;
+}
+section.content:after{
+	display: block;
+	content: "";
+	clear:both;
+}

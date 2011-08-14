@@ -1,0 +1,11 @@
+.gaedata
+.packages/
+src/*/django
+src/*/djangoappengine
+src/*/djangotoolbox
+src/*/dbindexer
+src/*/autoload
+src/*/local_sites.py
+src/*/local_settings.py
+static/collected/
+*.pyc

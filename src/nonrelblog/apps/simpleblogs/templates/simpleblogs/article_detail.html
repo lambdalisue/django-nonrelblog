@@ -1,0 +1,32 @@
+{% extends "simpleblogs/base.html" %}
+{% load i18n %}
+{% load comments %}
+{% load markup %}
+
+{% block header %}
+{% get_comment_count for article as comment_count %}
+<h1 class="title"><a href="{{ article.get_absolute_url }}">{{ article }}</a></h1>
+{% blocktrans with article.publish_at|date as publish_at %}<p class="description">Posted at {{ publish_at }}</p>{% endblocktrans %}
+{% blocktrans %}<p class="description">{{ comment_count }} comments are posted to this article{% endblocktrans %}</p>
+{% endblock %}
+
+{% block content %}
+{{ block.super }}
+<nav id="return">
+	<a href="/" title="{% trans 'Return to Home' %}">{% trans '&lt;&lt; Return to Home' %}</a>
+</nav>
+{% with object as article %}
+<article id="article">
+	<article class="body markup">
+		{{ article.body|restructuredtext }}
+	</article>
+</article>
+
+<section id="comment">
+	{% render_comment_list for article %}
+	{% with article.get_absolute_url as next %}
+	{% render_comment_form for article %}
+	{% endwith %}
+</section>	
+{% endwith %}
+{% endblock %}
